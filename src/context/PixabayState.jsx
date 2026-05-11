@@ -6,7 +6,7 @@ const PixabayState = (props) => {
     const api_key = import.meta.env.VITE_PIXABAY_KEY;
 
     const [imageData, setimageData] = useState([]);
-    const [imageCat, setimageCat] = useState("fashion");  //for different category
+    const [imageCat, setimageCat] = useState("nature");  //for different category
     const [imageSearch, setimageSearch] = useState("");  //for Search Bar
 
     useEffect(()=>{
