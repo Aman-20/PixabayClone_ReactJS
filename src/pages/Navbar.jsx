@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import PixabayContext from '../context/pixabayContext'
+import PixabayContext from '../context/PixabayContext'
 
 const Navbar = () => {
 
