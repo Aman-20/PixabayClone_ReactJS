@@ -17,6 +17,9 @@ const PixabayState = (props) => {
   const [fetchError, setFetchError] = useState(null);
 
 
+  const [selectedImg, setSelectedImg] = useState(null);
+
+
 
   const fetchImages = async (queryParam, pageNum=1) => {
 
@@ -71,7 +74,7 @@ const PixabayState = (props) => {
 
   return (
     <>
-      <PixabayContext.Provider value={{ handleCategory, handleSearch, imageData, loading, fetchError, imageSearch, setimageSearch, loadNext, loadPrev, page}} >{props.children}</PixabayContext.Provider>
+      <PixabayContext.Provider value={{ handleCategory, handleSearch, imageData, loading, fetchError, imageSearch, setimageSearch, loadNext, loadPrev, page, selectedImg, setSelectedImg}} >{props.children}</PixabayContext.Provider>
     </>
   )
 }

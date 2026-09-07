@@ -4,7 +4,7 @@ import PixabayContext from '../context/PixabayContext'
 
 
 const Images = () => {
-    const {imageData, loading, fetchError, loadNext, loadPrev, page} = useContext(PixabayContext);
+    const {imageData, loading, fetchError, loadNext, loadPrev, page, setSelectedImg} = useContext(PixabayContext);
 
     if (loading) {
         return (
@@ -46,7 +46,7 @@ const Images = () => {
                 {imageData.map((image) => (
                     <div key={image.id}>
                         <div className='item'>
-                            <img src={image.webformatURL} alt="image" />
+                            <img src={image.webformatURL} alt="image" onClick={()=>setSelectedImg(image)}  />
                         </div>
                     </div>
                 ))}
