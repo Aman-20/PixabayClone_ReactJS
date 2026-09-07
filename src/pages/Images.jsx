@@ -46,7 +46,8 @@ const Images = () => {
                 {imageData.map((image) => (
                     <div key={image.id}>
                         <div className='item'>
-                            <img src={image.webformatURL} alt="image" onClick={()=>setSelectedImg(image)}  />
+                            <img src={image.webformatURL} alt={image.tags} onClick={()=>setSelectedImg(image)} 
+                            style={{ width: '400px', height: '300px', objectFit: 'cover', cursor: 'pointer' }} />
                         </div>
                     </div>
                 ))}
