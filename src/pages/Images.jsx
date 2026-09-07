@@ -4,7 +4,7 @@ import PixabayContext from '../context/PixabayContext'
 
 
 const Images = () => {
-    const {imageData, loading, fetchError} = useContext(PixabayContext);
+    const {imageData, loading, fetchError, loadNext, loadPrev, page} = useContext(PixabayContext);
 
     if (loading) {
         return (
@@ -38,19 +38,34 @@ const Images = () => {
     }
 
     return (
+        <>
+
         <div className="container">
             <div className='flex'>
 
                 {imageData.map((image) => (
                     <div key={image.id}>
                         <div className='item'>
-                            <img src={image.largeImageURL} alt="image" />
+                            <img src={image.webformatURL} alt="image" />
                         </div>
                     </div>
                 ))}
                 
             </div>
         </div>
+
+
+
+        <div className="d-flex justify-content-center align-items-center gap-3 my-4">
+            <button className="btn btn-outline-primary" onClick={loadPrev} disabled={page === 1 || loading}>
+                Previous
+            </button>
+            <span>Page {page}</span>
+            <button className="btn btn-outline-primary" onClick={loadNext} disabled={loading}>
+                Next
+            </button>
+        </div>
+    </>
     )
 }
 

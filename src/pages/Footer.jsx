@@ -11,7 +11,7 @@ const Footer = () => {
       }}
     >
       <h5 style={{ marginBottom: '10px' }}>
-        Pixabay Clone 📸
+        Pixabay Image Search 📸
       </h5>
 
       <p style={{ margin: 0 }}>
